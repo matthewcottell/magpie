@@ -4,9 +4,9 @@ addAssignees: author
 
 # A list of reviewers to be added to pull requests (GitHub usernames)
 reviewers:
-
   - matthewcottell
-
+assignees:
+  - matthewcottell
 
 # Number of reviewers to add; set to 0 to add all reviewers
 numberOfReviewers: 0
