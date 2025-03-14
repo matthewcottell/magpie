@@ -29,6 +29,3 @@ jobs:
 
       - name: Run SQLFluff (SQL linter)
         run: sqlfluff lint --dialect postgres  # Adjust dialect as needed
-
-      # - name: Run CodeRabbit
-      #   run: coderabbit scan
