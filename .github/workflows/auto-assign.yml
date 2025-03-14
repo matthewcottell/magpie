@@ -1,17 +1,15 @@
-name: "Auto Assign"
+name: Auto Assign Reviewers
+
 on:
   pull_request:
-    types: [opened, ready_for_review]
-
-permissions:
-  contents: read
-  pull-requests: write
+    types: [opened, synchronize, reopened]
 
 jobs:
-  add-reviewers:
+  assign-reviewers:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
     steps:
-      - uses: kentaro-m/auto-assign-action@v2.0.0
+      - name: Add reviewers based on CODEOWNERS
+        uses: github/auto-assign-action@v2
         with:
-          configuration-path: ".github/auto_assign_config.yml"
+          reviewers: ${{ github.event.pull_request.user.login }}
+          assignees: ${{ github.event.pull_request.user.login }}
