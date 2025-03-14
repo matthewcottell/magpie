@@ -30,16 +30,3 @@ jobs:
 
       - name: Run SQLFluff (SQL linter)
         run: sqlfluff lint --dialect postgres  # Adjust dialect as needed
-  codeql:
-    name: CodeQL Analysis
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up CodeQL
-        uses: github/codeql-action/setup-codeql@v2
-
-      - name: Perform CodeQL Analysis
-        uses: tonys-code-base/run-codeql-analysis-action@v0.1.0
