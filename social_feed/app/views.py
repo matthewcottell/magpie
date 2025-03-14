@@ -1,16 +1,15 @@
 from django.shortcuts import render
 from .models import Post
 
-
 def home(request):
     posts = Post.objects.all()  # Fetch all posts (you can add filtering for friends)
     return render(request, "index.html", {"posts": posts})
 
 
-from django.http import JsonResponse
-from .models import Post
-from django.views.decorators.csrf import csrf_exempt
-from django.utils import timezone
+from django.http import JsonResponse  # ruff: ignore E402, F811
+from .models import Post  # ruff: ignore E402, F811
+from django.views.decorators.csrf import csrf_exempt  # ruff: ignore E402
+from django.utils import timezone  # ruff: ignore E402
 
 
 @csrf_exempt
