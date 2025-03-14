@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add reviewers based on CODEOWNERS
-        uses: github/auto-assign-action@v2
+        uses: github/auto-assign-action@v2.0.1 # Specifying a version explicitly (if v2 has issues)
         with:
           reviewers: ${{ github.event.pull_request.user.login }}
           assignees: ${{ github.event.pull_request.user.login }}
