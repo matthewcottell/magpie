@@ -6,6 +6,13 @@ on:
       - main  # Adjust based on your branch strategy
 
 jobs:
+  assign_reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add reviewers
+        uses: peter-evans/review-assigner@v2
+        with:
+          reviewers: 'matthewcottell'
   lint:
     name: Run linters
     runs-on: ubuntu-latest
