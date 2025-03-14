@@ -10,9 +10,7 @@ permissions:
 jobs:
   add-reviewers:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
     steps:
       - uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          reviewers: mattcottell
-          assignees: matthewcottell
+          configuration-path: ".github/auto_assign_config.yml"
