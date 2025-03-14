@@ -7,10 +7,18 @@ def home(request):
     return render(request, "index.html", {"posts": posts})
 
 
-from django.http import JsonResponse  # ruff: ignore E402, F811
-from .models import Post  # ruff: ignore E402, F811
-from django.views.decorators.csrf import csrf_exempt  # ruff: ignore E402
-from django.utils import timezone  # ruff: ignore E402
+# Ignore E402 and F811 for the imports below
+# ruff: ignore E402, F811
+from django.http import JsonResponse
+
+# ruff: ignore E402
+from .models import Post
+
+# ruff: ignore E402
+from django.views.decorators.csrf import csrf_exempt
+
+# ruff: ignore E402
+from django.utils import timezone
 
 
 @csrf_exempt
